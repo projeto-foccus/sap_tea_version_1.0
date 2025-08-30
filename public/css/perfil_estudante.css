@@ -1,0 +1,805 @@
+/* Reset e estilos base */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Container principal */
+.perfil-container {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    position: relative;
+    border-left: 5px solid #007bff;
+}
+
+/* Cabeçalho do perfil */
+.perfil-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Estilos para formulários */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.form-control, .form-select, .form-check-input {
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+    padding: 8px 12px;
+    width: 100%;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+textarea.form-control {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Estilos para linhas e colunas */
+
+/* --- Estilos migrados do Blade --- */
+.step-navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    margin-top: 30px;
+    border-top: 1px solid #ddd;
+    background-color: #f8f9fa;
+    gap: 20px;
+    width: 100%;
+}
+.navigation-group, .action-group {
+    display: flex;
+    gap: 10px;
+}
+.prev-btn, .next-btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    background-color: #6c757d;
+    color: white;
+}
+.prev-btn:hover, .next-btn:hover {
+    background-color: #5a6268;
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+.prev-btn i, .next-btn i {
+    margin: 0 5px;
+}
+.finish-btn, .btn-danger {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+.finish-btn {
+    background-color: #4CAF50;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.finish-btn:hover {
+    background-color: #45a049;
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+.finish-btn i {
+    margin: 0 5px;
+}
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+.btn-danger:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+.btn-danger i {
+    margin: 0 5px;
+}
+/* --- Fim dos estilos migrados --- */
+
+/* --- Estilos migrados do bloco removido (linhas 90-112 do Blade) --- */
+
+/* --- Estilos migrados do bloco <style> do início do Blade --- */
+
+/* --- Estilos migrados do bloco inline (linhas 60-120 do Blade) --- */
+.step-tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+    position: relative;
+    z-index: 2; /* Acima de tudo */
+}
+.step-tab {
+    padding: 10px 15px;
+    background-color: #e0e0e0;
+    border-radius: 5px 5px 0 0;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    min-width: 100px;
+    margin-right: 5px;
+}
+.step-tab.active {
+    background-color: #d35400;
+    color: white;
+}
+.prev-btn, .next-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.prev-btn {
+    background-color: #e0e0e0;
+    color: #333;
+}
+.next-btn {
+    background-color: #d35400;
+    color: white;
+}
+.prev-btn:hover, .next-btn:hover {
+    opacity: 0.8;
+}
+/* --- Fim dos estilos migrados deste bloco --- */
+
+.container {
+    position: relative;
+}
+.profissionais-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+}
+.profissional-row {
+    display: flex;
+    gap: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+.profissional-row:nth-child(even) {
+    background-color: #ffffff;
+}
+.profissional-row label {
+    color: #333;
+    font-weight: bold;
+}
+.profissional-row input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+.profissional-field {
+    flex: 1;
+    min-width: 200px;
+}
+.profissional-field label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.profissional-field input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.step-tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+    position: relative;
+    z-index: 2; /* Acima de tudo */
+}
+.step-tab {
+    padding: 10px 15px;
+    background-color: #e0e0e0;
+    border-radius: 5px 5px 0 0;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    min-width: 100px;
+    margin-right: 5px;
+}
+.step-tab.active {
+    background-color: #d35400;
+    color: white;
+}
+.prev-btn, .next-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.prev-btn {
+    background-color: #e0e0e0;
+    color: #333;
+}
+.next-btn {
+    background-color: #d35400;
+    color: white;
+}
+.prev-btn:hover, .next-btn:hover {
+    opacity: 0.8;
+}
+.progress-container {
+    width: 100%;
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    margin: 20px 0;
+    position: relative;
+    z-index: 2; /* Acima de tudo */
+}
+.progress-bar {
+    height: 8px;
+    background: #d35400;
+    border-radius: 4px;
+    width: 0%;
+    transition: width 0.3s;
+}
+/* --- Fim dos estilos migrados deste bloco --- */
+
+/* --- Estilos migrados do bloco removido (linhas 90-112 do Blade) --- */
+.step-content {
+    display: none;
+    position: relative;
+    z-index: 1; /* Na frente das imagens */
+}
+.step-content.active {
+    display: block;
+}
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    position: relative;
+    z-index: 2; /* Acima de tudo */
+}
+/* --- Fim dos estilos migrados deste bloco --- */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.col {
+    padding: 0 15px;
+    flex: 1;
+    min-width: 0;
+}
+
+/* Estilos para botões */
+.btn {
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    text-align: center;
+    display: inline-block;
+    line-height: 1.5;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+
+/* Estilos para seções */
+.section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    border-left: 4px solid #6c757d;
+}
+
+.section-title {
+    color: #495057;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+/* Estilos para tabelas */
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+    background-color: #f8f9fa;
+}
+
+/* Estilos para mensagens de alerta */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 768px) {
+    .perfil-container {
+        padding: 15px;
+        margin: 10px;
+    }
+    
+    .row {
+        flex-direction: column;
+        margin: 0;
+    }
+    
+    .col {
+        padding: 0;
+        margin-bottom: 15px;
+    }
+    
+    .col:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/* Estilos para impressão */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    
+    .perfil-container {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+    }
+    
+    .btn {
+        display: none;
+    }
+}
+h2 {
+    text-align: center;
+    color: #d35400;
+}
+label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+.row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+.row.align-items-end {
+    align-items: flex-end !important;
+}
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.form-group label {
+    display: block;
+    text-align: left;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+input[readonly].form-control {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.button-group {
+display: flex;
+gap: 10px; /* Espaçamento entre os botões */
+justify-content: center; /* Centraliza os botões */
+margin-top: 20px;
+}
+
+.btn {
+padding: 12px 20px;
+font-size: 16px;
+font-weight: bold;
+border-radius: 8px;
+text-decoration: none;
+transition: all 0.3s ease-in-out;
+border: none;
+cursor: pointer;
+}
+
+.btn-primary {
+background-color: #007bff;
+color: white;
+}
+
+.btn-primary:hover {
+background-color: #0056b3;
+}
+
+.btn-danger {
+background-color: #dc3545;
+color: white;
+}
+
+.btn-danger:hover {
+background-color: #a71d2a;
+}
+
+.pdf-button {
+background-color: #28a745;
+color: white;
+padding: 12px 20px;
+font-size: 16px;
+font-weight: bold;
+border-radius: 8px;
+border: none;
+cursor: pointer;
+transition: all 0.3s ease-in-out;
+}
+
+.pdf-button:hover {
+background-color: #1e7e34;
+}
+
+.calendar {
+    width: 100%;
+    max-width: 900px;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Cabeçalho */
+.header {
+    background: #e0e0e0; /* Cinza neutro */
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+}
+
+/* Estilização dos dias da semana */
+.day {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    padding: 15px;
+    border: 1px solid #ccc;
+    width: 120px;
+}
+
+/* Cores para os dias */
+.monday { background: #FFF3CD; }  /* Amarelo neutro */
+.tuesday { background: #D6EAF8; } /* Azul bebê */
+.wednesday { background: #D4EDDA; } /* Verde neutro */
+.thursday { background: #FAD7A0; } /* Laranja neutro */
+.friday { background: #EAD1DC; } /* Roxo neutro */
+
+/* Estilização das células */
+.cell {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+/* Inputs ajustados */
+.cell input {
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Input de horário menor */
+.cell .time-input {
+    width: 80px;
+    padding: 5px;
+}
+
+/* Nome do profissional maior */
+.cell .name-input {
+    width: 200px;
+    padding: 5px;
+}
+
+/* Input de especialidade normal */
+.cell .specialty-input {
+    width: 150px;
+    padding: 5px;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background: none; /* Remove a cor de fundo */
+    color: black; /* Mantém as letras pretas */
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+    border-left: 10px solid rgba(0, 0, 0, 0.5); /* Amarelo apagado */
+    padding-left: 15px; /* Ajuste para não colar no conteúdo */
+}
+
+/* Estilizando a logo superior esquerda */
+.logo-top-left {
+    position: absolute;
+    top: 32px;
+    left: 55px;
+    width: 250px; /* Ajuste conforme necessário */
+}
+
+
+    .logo-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px; /* Ajuste conforme necessário */
+    opacity: 0.1; /* Transparência da logo */
+    z-index: 10; /* Coloca a logo acima dos outros elementos */
+    pointer-events: none; /* Permite interação com os elementos abaixo */
+}
+
+
+
+
+/* Estilizando a logo inferior direita */
+.logo-bottom-right {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 250px; /* Ajuste conforme necessário */
+}
+
+  
+        h2 {
+            text-align: center;
+            color: #d35400;
+        }
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+        .row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+        }
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+
+        .button-group {
+    display: flex;
+    gap: 10px; /* Espaçamento entre os botões */
+    justify-content: center; /* Centraliza os botões */
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #a71d2a;
+}
+
+.pdf-button {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.pdf-button:hover {
+    background-color: #1e7e34;
+}
+
+.calendar {
+            width: 100%;
+            max-width: 900px;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        /* Cabeçalho */
+        .header {
+            background: #e0e0e0; /* Cinza neutro */
+            color: #333;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+        }
+
+        /* Estilização dos dias da semana */
+        .day {
+            font-size: 16px;
+            font-weight: bold;
+            text-align: left;
+            padding: 15px;
+            border: 1px solid #ccc;
+            width: 120px;
+        }
+
+        /* Cores para os dias */
+        .monday { background: #FFF3CD; }  /* Amarelo neutro */
+        .tuesday { background: #D6EAF8; } /* Azul bebê */
+        .wednesday { background: #D4EDDA; } /* Verde neutro */
+        .thursday { background: #FAD7A0; } /* Laranja neutro */
+        .friday { background: #EAD1DC; } /* Roxo neutro */
+
+        /* Estilização das células */
+        .cell {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+
+        /* Inputs ajustados */
+        .cell input {
+            border: 1px solid #aaa;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* Input de horário menor */
+        .cell .time-input {
+            width: 80px;
+            padding: 5px;
+        }
+
+        /* Nome do profissional maior */
+        .cell .name-input {
+            width: 200px;
+            padding: 5px;
+        }
+
+        /* Input de especialidade normal */
+        .cell .specialty-input {
+            width: 150px;
+            padding: 5px;
+        }

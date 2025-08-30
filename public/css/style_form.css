@@ -1,0 +1,127 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Títulos */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333333;
+}
+
+/* Estilo das tabelas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #dee2e6;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #f1f1f1;
+    font-weight: bold;
+}
+
+td:first-child {
+    text-align: left;
+}
+
+/* Botões de rádio */
+input[type="radio"] {
+    appearance: none; /* Remove o estilo padrão */
+    width: 20px;
+    height: 20px;
+    border: 2px solid #000000; /* Cor da borda */
+    border-radius: 4px; /* Bordas arredondadas */
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+input[type="radio"]:checked::after {
+    content: "X"; 
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000; /* Cor do "X" */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Botão de envio */
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff; /* Azul padrão */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3; /* Azul escuro ao passar o mouse */
+}
+
+/* Estilos específicos por eixo */
+
+/* Eixo Comunicação/Linguagem */
+.eixo-comunicacao {
+    background-color: #e3f2fd; /* Azul claro */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Eixo Comportamento */
+.eixo-comportamento {
+    background-color: #fffde7; /* Amarelo claro */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Eixo Interação Socioemocional */
+.eixo-socioemocional {
+    background-color: #e8f5e9; /* Verde claro */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#form1 {
+  background-color: #e3f2fd; /* Azul claro */
+  color: #000; /* Texto preto */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#form2 {
+  background-color: #fffde7; /* Amarelo claro */
+  color: #000; /* Texto preto */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#form3 {
+  background-color: #e8f5e9; /* Verde claro */
+  color: #000; /* Texto preto */
+  padding: 20px;
+  border-radius: 10px;
+}
+

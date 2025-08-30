@@ -1,0 +1,133 @@
+/* Estilo geral */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #db7a19;
+}
+
+/* Tabelas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #dee2e6;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #db7a19; /* Cabeçalho azul */
+    color: white; /* Texto branco */
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9; /* Linhas alternadas */
+}
+
+tr:hover {
+    background-color: #f1f1f1; /* Linha destacada ao passar o mouse */
+}
+
+/* Inputs */
+/* Estilo para os botões de rádio */
+input[type="radio"] {
+    appearance: none; /* Remove o estilo padrão do navegador */
+    width: 20px; /* Largura do botão */
+    height: 20px; /* Altura do botão */
+    border: 2px solid #db7a19; /* Cor da borda */
+    border-radius: 4px; /* Bordas arredondadas */
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    background-color: #ffffff; /* Fundo branco */
+}
+
+input[type="radio"]:checked::after {
+    content: "X"; /* Adiciona o "X" */
+    font-size: 16px; /* Tamanho do "X" */
+    font-weight: bold; /* Deixa o "X" em negrito */
+    color:rgb(14, 14, 14); /* Cor do "X" */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centraliza o "X" dentro do botão */
+}
+
+input[type="radio"]:hover {
+    border-color: #db7a19; /* Muda a cor da borda ao passar o mouse */
+}
+
+/* Botões */
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #db7a19; /* Azul padrão */
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #db7a19; /* Azul mais escuro ao passar o mouse */
+}
+
+/* Formulários por eixo */
+#form1, #form2, #form3 {
+    margin-bottom: 20px;
+}
+
+#form1 {
+   background-color: #e3f2fd; /* Azul claro */
+   padding: 20px;
+   border-radius: 10px;
+}
+
+#form2 {
+   background-color: #fffde7; /* Amarelo claro */
+   padding: 20px;
+   border-radius: 10px;
+}
+
+#form3 {
+   background-color: #e8f5e9; /* Verde claro */
+   padding: 20px;
+   border-radius: 10px;
+}
+
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+   table, th, td {
+       font-size: 14px; /* Reduz o tamanho da fonte em telas menores */
+   }
+
+   button[type="submit"] {
+       font-size: 14px; /* Ajusta o botão para telas menores */
+   }
+}

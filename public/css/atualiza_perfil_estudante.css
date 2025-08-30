@@ -1,0 +1,270 @@
+/* Estilos para a página de atualização do perfil do estudante */
+
+body {
+    min-height: 100vh;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.logo-top-left {
+    position: fixed;
+    top: 25mm;
+    left: 20mm;
+    width: 60mm;
+    opacity: 0.25;
+    z-index: 1;
+    filter: drop-shadow(0 2px 8px #0002) grayscale(1);
+    pointer-events: none;
+}
+
+.logo-bottom-right {
+    position: fixed;
+    bottom: 20mm;
+    right: 20mm;
+    width: 60mm;
+    opacity: 0.25;
+    z-index: 1;
+    filter: drop-shadow(0 2px 8px #0002) grayscale(1);
+    pointer-events: none;
+}
+
+/* Estilos para o formulário */
+.perfil-container {
+    background: #fff;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.logo-center {
+    display: block;
+    margin: 0 auto 15px;
+    max-width: 150px;
+}
+
+.logo-bg-top {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.logo-img-top {
+    max-width: 120px;
+    height: auto;
+}
+
+.form-group {
+    margin-bottom: 12px;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 4px;
+    display: block;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="number"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -8px;
+}
+
+.row .form-group {
+    flex: 1;
+    padding: 0 8px;
+    min-width: 180px;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 15px;
+    margin: 10px 0;
+    align-items: center;
+}
+
+.checkbox-group label {
+    margin-right: 10px;
+    font-weight: normal;
+    display: inline-flex;
+    align-items: center;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+/* Estilos para botões */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: opacity 0.2s;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* Estilos para mensagens */
+.message {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.message-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Estilos para o cabeçalho */
+.page-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.page-header h1 {
+    color: #0056b3;
+    font-size: 24px;
+    margin: 0;
+}
+
+/* Estilos para o rodapé */
+.page-footer {
+    margin-top: 30px;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+/* Estilos para a tabela */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.table th,
+.table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+/* Estilos para o menu de navegação */
+.nav-tabs {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.nav-tabs li {
+    display: inline-block;
+    margin-bottom: -1px;
+}
+
+.nav-tabs a {
+    padding: 8px 15px;
+    border: 1px solid transparent;
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+    background-color: #f8f9fa;
+    color: #495057;
+}
+
+.nav-tabs a.active {
+    border-color: #ddd #ddd #fff;
+    background-color: #fff;
+    color: #0056b3;
+}
+
+/* Estilos para o modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+    z-index: 1000;
+}
+
+.modal.show {
+    display: block;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    margin: 50px auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.modal-header h4 {
+    margin: 0;
+}
+
+.modal-close {
+    cursor: pointer;
+    font-size: 20px;
+    color: #6c757d;
+}
+
+.modal-close:hover {
+    color: #000;
+    text-decoration: none;
+}

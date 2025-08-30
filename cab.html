@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indicativo de Atividade e Habilidades</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 800px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #d9534f;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            font-weight: bold;
+            display: block;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .table-container {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .table-container th, .table-container td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        .table-container th {
+            background-color: #f4f4f4;
+        }
+        .highlight-yellow {
+            background-color: #f9e79f;
+        }
+        .highlight-blue {
+            background-color: #d6eaf8;
+        }
+        button {
+            background-color: #5cb85c;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Indicativo de Atividade e Habilidades</h1>
+        <form>
+            <div class="form-group">
+                <label>Data:</label>
+                <input type="date">
+            </div>
+            <div class="form-group">
+                <label>Secretaria de Educação do Município:</label>
+                <input type="text">
+            </div>
+            <div class="form-group">
+                <label>Escola:</label>
+                <input type="text">
+            </div>
+            <div class="form-group">
+                <label>Nome do Aluno:</label>
+                <input type="text">
+            </div>
+            <div class="form-group">
+                <label>Data de Nascimento:</label>
+                <input type="date">
+            </div>
+            <div class="form-group">
+                <label>Idade:</label>
+                <input type="number" min="1">
+            </div>
+            <div class="form-group">
+                <label>Ano/Série:</label>
+                <input type="text">
+            </div>
+            <div class="form-group">
+                <label>Turma:</label>
+                <input type="text">
+            </div>
+            <div class="form-group">
+                <label>Ano/Série:</label>
+                <input type="text">
+            </div>
+            <h3>Atividades</h3>
+            <table class="table-container">
+                <tr>
+                    <th>Selecionar</th>
+                    <th>Código</th>
+                    <th>Descrição</th>
+                </tr>
+                <tr class="highlight-blue"><td><input type="checkbox"></td><td>ECM02</td><td>A mágica da gentileza</td></tr>
+                <tr class="highlight-blue"><td><input type="checkbox"></td><td>ECM04</td><td>Expressão ilustrada</td></tr>
+                <tr class="highlight-blue"><td><input type="checkbox"></td><td>ECM06</td><td>Onde encaixa?</td></tr>
+                <tr class="highlight-blue"><td><input type="checkbox"></td><td>ECP02</td><td>Mexe e remexe</td></tr>
+                <tr class="highlight-yellow"><td><input type="checkbox"></td><td>ECP06</td><td>Rotina de autocuidado</td></tr>
+                <tr class="highlight-blue"><td><input type="checkbox"></td><td>EIS03</td><td>Nameando as emoções</td></tr>
+            </table>
+            <h3>Habilidades</h3>
+            <div class="form-group">
+                <label>Observações:</label>
+                <textarea rows="4" style="width:100%;"></textarea>
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>

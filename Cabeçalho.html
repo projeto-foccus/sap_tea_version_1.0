@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Importação da fonte Quicksand -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Rotina e Monitoramento de Atividades</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    .container {
+      border: 2px solid red;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: red;
+    }
+
+    .header-logos {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header-logos img {
+      width: 100px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    select {
+      width: 100%;
+      padding: 5px;
+    }
+
+    .full-width {
+      grid-column: span 2;
+    }
+
+    .alert-box {
+      border: 1px solid gray;
+      background-color: #f9f9f9;
+      padding: 10px;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    .alert-box em {
+      color: red;
+      font-style: italic;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 5px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #eee;
+    }
+
+    .retirar {
+      color: red;
+      font-weight: bold;
+    }
+
+    .obs-finais {
+      margin-top: 20px;
+    }
+
+    .obs-finais textarea {
+      width: 100%;
+      height: 100px;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header-logos">
+    <img src="logo-educacao.png" alt="Logo Educação">
+    <h1>ROTINA E MONITORAMENTO DE <br> APLICAÇÃO DE ATIVIDADES 1 - INICIAL</h1>
+    <img src="logo-focus.png" alt="Logo Focus">
+  </div>
+
+  <div class="container">
+    <div class="form-grid">
+      <div class="full-width">
+        <label>Seleção do Aluno:</label>
+        <select>
+          <option value="">-- Selecione o aluno --</option>
+          <option>Aluno 1</option>
+          <option>Aluno 2</option>
+          <option>Aluno 3</option>
+        </select>
+      </div>
+      <div>
+        <label>Secretaria de Educação do Município:</label>
+        <input type="text">
+      </div>
+      <div>
+        <label>Escola:</label>
+        <input type="text">
+      </div>
+      <div>
+        <label>Nome do Aluno:</label>
+        <input type="text">
+      </div>
+      <div>
+        <label>Data de Nascimento:</label>
+        <input type="text" placeholder="//">
+      </div>
+      <div>
+        <label>Idade:</label>
+        <input type="text">
+      </div>
+      <div>
+        <label>Ano/Série:</label>
+        <input type="text">
+      </div>
+      <div>
+        <label>Turma:</label>
+        <input type="text">
+      </div>
+      <div>
+        <label>RA:</label>
+        <input type="text">
+      </div>
+      <div>
+        <label>Data de sondagem</label>
+        <input type="date">
+      </div>
+    </div>
+
+    <div class="alert-box">
+      <strong>Caro(a) educador(a),</strong><br>
+      <span style="font-family: 'Quicksand', Arial, sans-serif; font-size: 15pt; color: #000000; display: block; margin-top: 10px;">
+        Esta é uma ferramenta do Programa Supergando TEA, criada para acompanhar o desenvolvimento do estudante com TEA por meio do mapeamento, monitoramento e emissão de relatórios que orientam suas ações pedagógicas, integrando um projeto de intervenção personalizado, contínuo e gradual.
+      </span>
+      Por favor, registre as atividades nas datas mencionadas e realize a devida anotação no quadro. Se necessário, utilize este espaço para marcar a aplicação e observações pertinentes. Após finalizar o processo, você deverá registrar no Suporte <strong>TEG Digital</strong> o cenário atual do aluno.<br>
+      <em>Observação: Em caso de dúvidas, consulte o suporte técnico ou administrativo para orientação. TEA</em>
+    </div>
+
+    <h3 class="retirar">Atividades Realizadas — Retirar</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Atividade</th>
+          <th>Data (Inicial)</th>
+          <th>Realizou a Atividade?</th>
+          <th>Com Apoio?</th>
+          <th>Observações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ECM01 - A mágica da gentileza</td>
+          <td><input type="text" placeholder="//"></td>
+          <td>
+            <label>Sim <input type="checkbox"></label>
+            <label>Não <input type="checkbox"></label>
+          </td>
+          <td>
+            <label>Sim <input type="checkbox"></label>
+            <label>Não <input type="checkbox"></label>
+          </td>
+          <td><input type="text"></td>
+        </tr>
+        <tr>
+          <td>ECM02 - A mágica do brincar</td>
+          <td><input type="text" placeholder="//"></td>
+          <td><label>Sim <input type="checkbox"></label> <label>Não <input type="checkbox"></label></td>
+          <td><label>Sim <input type="checkbox"></label> <label>Não <input type="checkbox"></label></td>
+          <td><input type="text"></td>
+        </tr>
+        <tr>
+          <td>ECM03 - A mágica de compartilhar</td>
+          <td><input type="text" placeholder="//"></td>
+          <td><label>Sim <input type="checkbox"></label> <label>Não <input type="checkbox"></label></td>
+          <td><label>Sim <input type="checkbox"></label> <label>Não <input type="checkbox"></label></td>
+          <td><input type="text"></td>
+        </tr>
+        <tr>
+          <td>ECM04 - A mágica do cuidar</td>
+          <td><input type="text" placeholder="//"></td>
+          <td><label>Sim <input type="checkbox"></label> <label>Não <input type="checkbox"></label></td>
+          <td><label>Sim <input type="checkbox"></label> <label>Não <input type="checkbox"></label></td>
+          <td><input type="text"></td>
+        </tr>
+        <tr>
+          <td>ECM05 - A mágica do aprender</td>
+          <td><input type="text" placeholder="//"></td>
+          <td><label>Sim <input type="checkbox"></label> <label>Não <input type="checkbox"></label></td>
+          <td><label>Sim <input type="checkbox"></label> <label>Não <input type="checkbox"></label></td>
+          <td><input type="text"></td>
+        </tr>
+        <tr>
+          <td>ECM06 - Expressão lúdica</td>
+          <td><input type="text" placeholder="//"></td>
+          <td><label>Sim <input type="checkbox"></label> <label>Não <input type="checkbox"></label></td>
+          <td><label>Sim <input type="checkbox"></label> <label>Não <input type="checkbox"></label></td>
+          <td><input type="text"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="obs-finais">
+      <label>Observações Finais:</label><br>
+      <textarea></textarea>
+    </div>
+  </div>
+</body>
+</html>

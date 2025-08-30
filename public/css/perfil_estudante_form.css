@@ -1,0 +1,185 @@
+/* Estilos para o formulário de perfil do estudante */
+
+.container {
+    position: relative;
+}
+
+/* Estilos para a tabela de profissionais */
+.profissionais-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+}
+
+.profissional-row {
+    display: flex;
+    gap: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.profissional-row:nth-child(even) {
+    background-color: #ffffff;
+}
+
+.profissional-row label {
+    color: #333;
+    font-weight: bold;
+}
+
+.profissional-row input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+.profissional-field {
+    flex: 1;
+    min-width: 200px;
+}
+
+.profissional-field label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.profissional-field input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Estilos para a paginação em abas */
+.step-tabs {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+    position: relative;
+    z-index: 2;
+    gap: 5px;
+}
+
+.step-tab {
+    padding: 10px 15px;
+    background-color: #e0e0e0;
+    border-radius: 5px 5px 0 0;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    min-width: 150px;
+    white-space: nowrap;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: none;
+    outline: none;
+}
+
+.step-tab:hover {
+    background-color: #d0d0d0;
+}
+
+.step-tab.active {
+    background-color: #d35400;
+    color: white;
+}
+
+/* Estilos para os conteúdos das etapas */
+.step-content {
+    display: none;
+    position: relative;
+    z-index: 1;
+}
+
+.step-content.active {
+    display: block;
+}
+
+/* Botões de navegação */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.prev-btn, .next-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.prev-btn {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.next-btn {
+    background-color: #d35400;
+    color: white;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    opacity: 0.8;
+}
+
+/* Barra de progresso */
+.progress-container {
+    width: 100%;
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    margin: 20px 0;
+    position: relative;
+    z-index: 2;
+}
+
+.progress-bar {
+    height: 8px;
+    background: #d35400;
+    border-radius: 4px;
+    width: 0%;
+    transition: width 0.3s;
+}
+
+/* Estilos para toast de sucesso */
+.custom-toast {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    z-index: 9999;
+    background: #28a745;
+    color: #fff;
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-size: 1.15rem;
+    box-shadow: 0 2px 12px rgba(40,167,69,0.15);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.custom-toast.show {
+    display: flex;
+}
+
+/* Garantir que a aba Profissionais fique visível */
+.step-tab[data-step="6"] {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+    z-index: 1 !important;
+}

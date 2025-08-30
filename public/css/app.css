@@ -1,0 +1,11 @@
+
+  .custom-orange {
+    background-color: #ff8800; /* Laranja personalizado */
+    border-color: #e67600;
+    color: white; /* Cor do texto */
+  }
+
+  .custom-orange:hover {
+    background-color: #e67600;
+    border-color: #cc6600;
+  }

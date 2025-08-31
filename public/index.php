@@ -1,5 +1,4 @@
 <?php
-e ai pedro chegou?
 
 
 /**

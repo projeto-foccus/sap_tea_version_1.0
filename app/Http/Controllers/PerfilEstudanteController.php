@@ -41,7 +41,7 @@ class PerfilEstudanteController extends Controller
         }
 
         // --- POPULAR ESTOQUE DE ATIVIDADES CASO NÃO EXISTA ---
-        \Log::info('Tentando popular estoque para o aluno', ['aluno_id' => $aluno_id]);
+        Log::info('Tentando popular estoque para o aluno', ['aluno_id' => $aluno_id]);
         $existeEstoque = DB::table('estoque_atividades')->where('aluno_id', $aluno_id)->exists();
         if (!$existeEstoque) {
             // Comunicação/Linguagem
@@ -154,7 +154,7 @@ class PerfilEstudanteController extends Controller
                 ]);
             }
         }
-        \Log::info('Finalizou tentativa de popular estoque para o aluno', ['aluno_id' => $aluno_id]);
+        Log::info('Finalizou tentativa de popular estoque para o aluno', ['aluno_id' => $aluno_id]);
 
         $alunoDetalhado = \App\Models\Aluno::getAlunosDetalhados($aluno_id);
 
@@ -491,20 +491,13 @@ public function mostra_aluno_eixo($id)
 
     return view('alunos.imprime_aluno_eixo', compact('alunos','idade_eixo'));
 }
-        
     public function rotina_monitoramento_inicial()
     {
         $professor = auth('funcionario')->user();
-        if (!$professor) {
-            // Redireciona para login ou mostra erro amigável
-            return redirect()->route('login')->withErrors(['msg' => 'Sessão expirada ou acesso não autorizado. Faça login novamente.']);
-        }
         $funcId = $professor->func_id;
 
+        // Busca apenas alunos das turmas do professor logado
         $alunos = \App\Models\Aluno::porProfessor($funcId)
-            ->whereHas('eixoComunicacao')
-            ->whereHas('eixoSocioEmocional')
-            ->whereHas('eixoComportamento')
             ->orderBy('alu_nome', 'asc')
             ->get();
 

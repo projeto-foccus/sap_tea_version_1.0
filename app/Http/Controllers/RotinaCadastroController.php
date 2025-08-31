@@ -41,7 +41,7 @@ class RotinaCadastroController extends Controller
         }
 
         // --- POPULAR ESTOQUE DE ATIVIDADES CASO NÃO EXISTA ---
-        \Log::info('Tentando popular estoque para o aluno', ['aluno_id' => $aluno_id]);
+        Log::info('Tentando popular estoque para o aluno', ['aluno_id' => $aluno_id]);
         $existeEstoque = DB::table('estoque_atividades')->where('aluno_id', $aluno_id)->exists();
         if (!$existeEstoque) {
             // Comunicação/Linguagem
@@ -154,7 +154,7 @@ class RotinaCadastroController extends Controller
                 ]);
             }
         }
-        \Log::info('Finalizou tentativa de popular estoque para o aluno', ['aluno_id' => $aluno_id]);
+        Log::info('Finalizou tentativa de popular estoque para o aluno', ['aluno_id' => $aluno_id]);
 
         $alunoDetalhado = \App\Models\Aluno::getAlunosDetalhados($aluno_id);
 
@@ -400,12 +400,36 @@ return view('rotina_monitoramento.monitoramento_aluno', compact(
         }
         $funcId = $professor->func_id;
 
-        $alunos = \App\Models\Aluno::porProfessor($funcId)
-            ->whereHas('eixoComunicacao')
-            ->whereHas('eixoSocioEmocional')
-            ->whereHas('eixoComportamento')
-            ->orderBy('alu_nome', 'asc')
-            ->get();
+        // Usar consulta otimizada para incluir dados da escola e modalidade
+        $query = "SELECT DISTINCT 
+                    alu.alu_id, alu.alu_nome, alu.alu_dtnasc, alu.alu_ra, mat.numero_matricula,
+                    esc.esc_inep, alu.alu_nome_resp, alu.alu_tipo_parentesco, alu.alu_tel_resp,
+                    alu.alu_email_resp, esc.esc_razao_social, tm.desc_modalidade, ser.serie_desc,
+                    mat.periodo, fk_cod_valor_turma, org.org_razaosocial, moda.id_modalidade,
+                    fun.func_nome, tp.desc_tipo_funcao,
+                    CASE 
+                        WHEN EXISTS (
+                            SELECT 1 FROM eixo_com_lin ecl 
+                            WHERE ecl.fk_alu_id_ecomling = alu.alu_id AND ecl.fase_inv_com_lin = 'In'
+                        ) THEN '*' ELSE NULL 
+                    END as flag_inventario
+                  FROM aluno AS alu
+                  LEFT JOIN matricula AS mat ON alu.alu_id = mat.fk_id_aluno
+                  LEFT JOIN modalidade AS moda ON mat.fk_cod_mod = moda.id_modalidade
+                  LEFT JOIN tipo_modalidade AS tm ON moda.fk_id_modalidade = tm.id_tipo_modalidade
+                  LEFT JOIN turma AS tur ON tur.cod_valor = mat.fk_cod_valor_turma
+                  LEFT JOIN funcionario AS fun ON fun.func_id = tur.fk_cod_func
+                  LEFT JOIN escola AS esc ON CONVERT(esc.esc_inep USING utf8mb4) COLLATE utf8mb4_unicode_ci = CONVERT(tur.fk_inep USING utf8mb4) COLLATE utf8mb4_unicode_ci
+                  LEFT JOIN tipo_funcao AS tp ON tp.tipo_funcao_id = fun.func_cod_funcao
+                  LEFT JOIN serie as ser ON ser.serie_id = mat.fk_id_serie
+                  LEFT JOIN orgao AS org ON org.org_id = esc.fk_org_esc_id
+                  WHERE fun.func_id = ? 
+                  AND EXISTS (SELECT 1 FROM eixo_com_lin WHERE fk_alu_id_ecomling = alu.alu_id)
+                  AND EXISTS (SELECT 1 FROM eixo_int_socio WHERE fk_alu_id_eintsoc = alu.alu_id)
+                  AND EXISTS (SELECT 1 FROM eixo_comportamento WHERE fk_alu_id_ecomp = alu.alu_id)
+                  ORDER BY alu.alu_nome ASC";
+
+        $alunos = collect(DB::select($query, [$funcId]));
 
         return view('alunos.imprime_aluno_eixo', [
             'alunos' => $alunos,

@@ -24,7 +24,7 @@ class Aluno extends Model
     {
         return $this->hasMany(Matricula::class, 'fk_id_aluno', 'alu_id');
     }
-    
+
     /**
      * Relacionamento com o perfil do estudante
      */
@@ -136,9 +136,10 @@ public function responsavel()
      */
     public function scopePorProfessor($query, $funcId)
     {
-        return $query->whereHas('matriculas.turma', function($q) use ($funcId) {
-            $q->where('fk_cod_func', $funcId);
-        });
+        return $query->join('matricula', 'aluno.alu_id', '=', 'matricula.fk_id_aluno')
+                     ->join('turma', 'matricula.fk_cod_valor_turma', '=', 'turma.cod_valor')
+                     ->where('turma.fk_cod_func', $funcId)
+                     ->select('aluno.*')->distinct();
     }
 
     /**

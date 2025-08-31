@@ -24,10 +24,10 @@ class Turma extends Model
         return $this->hasMany(Matricula::class, 'fk_cod_valor_turma', 'cod_valor');
     }
 
-    // Relacionamento: Turma pertence a uma Escola
+    // Relacionamento: Turma pertence a uma Escola (com JOIN corrigido)
     public function escola()
     {
-        // Ajuste o campo 'fk_inep' para o nome correto caso seja diferente
-        return $this->belongsTo(Escola::class, 'fk_inep', 'esc_inep');
+        return $this->belongsTo(Escola::class, 'fk_inep', 'esc_inep')
+            ->withDefault(); // Retorna um modelo Escola vazio se não encontrar correspondência
     }
 }

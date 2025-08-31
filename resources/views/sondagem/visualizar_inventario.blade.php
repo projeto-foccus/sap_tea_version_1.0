@@ -156,29 +156,13 @@
                 Modalidade: <input type="text" style="width: 200px;" value="{{$alunoDetalhado->desc_modalidade}}" readonly>
             </p>
         </div>
-      
         <div class="fields">
-            <div class="fields">
-                <p>Data de inicio inventario:
-                    <?php
-                    $data_atual = date("d-m-Y");
-                    echo '<input name = "data_inicio_inventario" type="text" value="' . $data_atual . '" readonly
-                    style = "width: 80px"> ';
-                    ?>
-                </p>
-
-            
-            <p>Orgão: <input type="text" style="width: 300px;" value = "{{$alunoDetalhado->org_razaosocial}}" readonly></p>
-
-            <p>Escola: <input type="text" style="width: 300px;" value = "{{$alunoDetalhado->esc_razao_social}}" readonly ></p>
-            <p>Nome do estudante: <input type="text" style="width: 250px;"value = "{{$aluno->alu_nome}}" readonly></p>
-            
-            <p>Data de Nascimento: <input type="date" value ="{{$aluno->alu_dtnasc}}" readonly>
-                 Idade: <input value = "{{ \Carbon\Carbon::parse($aluno->alu_dtnasc)->age }} - anos" readonly type="text" min="0" style="width: 50px;"></p>
-            <p>Ano/Série: <input type="text" style="width: 150px;" value = "{{$alunoDetalhado->serie_desc}}" readonly> 
-                Turma:
-                <input value = "{{$alunoDetalhado->fk_cod_valor_turma}}" type="text" style="width: 120px;" readonly> 
-                Ano/Série <input type="text"style="width: 200px;" style="width: 250px;" value = "{{$alunoDetalhado->desc_modalidade}}" readonly></p>
+            <p>Data de inicio inventario:
+                <?php
+                $data_atual = date("d-m-Y");
+                echo '<input name="data_inicio_inventario" type="text" value="' . $data_atual . '" readonly style="width: 80px"> ';
+                ?>
+            </p>
         </div>
         <div class="inventory-data">
             <!-- Seção Responsável e Suporte -->

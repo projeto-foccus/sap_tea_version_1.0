@@ -26,7 +26,7 @@
                 <th>#</th>
                 <th>RA do estudante</th>
                 <th>Nome do estudante</th>
-                <th>Nome da Escola</th>
+                <th>escola oficial </th>
                 <th>Segmento</th>
                 <th>Ações</th>
             </tr>
@@ -39,8 +39,8 @@
                     <!-- Dados do aluno -->
                     <td>{{ $aluno->alu_ra }}</td>
                     <td>{{ $aluno->alu_nome }}</td>
-                    <td>{{ optional($aluno->matriculas->first()->turma->escola)->esc_razao_social ?? '---' }}</td>
-                    <td>{{ optional(optional($aluno->matriculas->first()->modalidade)->tipo)->desc_modalidade ?? '---' }}</td>
+                    <td>{{ $aluno->esc_razao_social ?? '---' }}</td>
+                    <td>{{ $aluno->desc_modalidade ?? '---' }}</td>
                   
                     <!-- Botões de ação flexíveis -->
                     <td>

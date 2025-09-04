@@ -771,7 +771,7 @@ public function mostra_aluno_eixo($id)
 
         return view('familia.lista_alunos', [
             'alunos' => $alunos,
-            'titulo' => 'Perfil Família - Inicial',
+            'titulo' => 'Perfil Família - Inicial e Habilidades Inicial',
             'botoes' => [
                 [
                     'label' => 'Perfil Inicial',

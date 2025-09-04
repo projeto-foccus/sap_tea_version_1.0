@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container mt-4">
-    <h2>{{ $titulo ?? 'Alunos matriculados' }}</h2>
+    <h2>Perfil Família - Indicativo de Atividades e Habilidades {{ ucfirst(explode('_', $contexto)[1] ?? '') }}</h2>
 
     @if(isset($professor_nome))
         <div class="alert alert-secondary mb-3">
